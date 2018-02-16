@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'rockwellregular';
+    src: url('../fonts/rockwen-webfont.woff2') format('woff2'),
+         url('../fonts/rockwen-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+html, body{height: 100%; width: 100%; }
+body{background: #1b506b url(../img/bg.jpg) no-repeat center top;  background-size: cover; color: #fff;font-family: 'rockwellregular'; text-transform: uppercase;}
+
+
+#agegate{height: 100%; width: 100%; background: #1b506b; position: fixed; z-index: 100; }
+#agegate img{margin: 45% auto 20%;}
+#agegate p{ letter-spacing: 2px; font-weight: bold;}
+.pwag-birthday-group{display: inline-block;}
+.pwag-date-box{
+	transition: color .2s ease;
+    width: 63.75px;
+    height: 105.1875px;
+    color: #1b506b;
+    display: inline-block;
+    position: relative;
+    margin: 0 5px;
+    transition: all .6s cubic-bezier(.165,.84,.44,1);
+    zoom: 1;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 8px 16px 0 rgba(49,46,48,.25)}
+    
+.pwag-date-box{
+	width: 100px;
+    height: 180px;
+}
+.pwag-date-box__placeholder{
+    font-size: 0;
+    height: 20px;
+    width: 80%;
+    background: #41a1a0;
+    position: absolute;
+    bottom: 10px;
+    left: 10%;
+}
+.pwag-date-box__input{ width: 100px; border: none; height: 170px; position: absolute;  top: 0; left: 0; background: transparent; font-size: 90px;  text-align: center;  outline: none;  font-weight: bolder; }
+#agegate input[type=number]::-webkit-inner-spin-button, 
+#agegate input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+#carousel{background: url(../img/bg-slider.jpg) no-repeat center bottom; background-size: cover;}
+.owl-prev {
+    width: 15px;
+    height: 100px;
+    position: absolute;
+    top: 40%;
+    left: 20px;
+    display: block!IMPORTANT;
+    border:0px solid black;
+}
+
+.owl-next {
+    width: 15px;
+    height: 100px;
+    position: absolute;
+    top: 40%;
+    right: 20px;
+    display: block!IMPORTANT;
+    border:0px solid black;
+}
+.owl-prev i, .owl-next i {transform : scale(1,1); color: #fff; font-size: 40px; opacity: 0.8;}
+.owl-prev:hover i, .owl-next:hover i{opacity: 1}
+
+
+#formulariobox{background: url(../img/bg-datos.jpg) no-repeat center bottom; background-size: cover; margin: 50px 0;}
+#pasos{}
+#pasos img{margin: 20px auto;}
+#pasos p{font-size: 20px; line-height: 100%; font-weight: bold; letter-spacing: 2px;}
+form{margin: 40px 0 50px;}
+.form-horizontal .form-group { margin-right: 0; margin-left: 0; }
+label{ display: block; letter-spacing: 2px; font-size: 18px;}
+.form-control{border-radius: 0; border: 5px solid #fff; background: transparent; font-size: 30px; color: #fff; height: 60px;}
+.form-control#codigo{font-size: 60px; height: 100px; text-align: center;}
+.btn-default { color: #fff; background-color: transparent; border: 5px solid #fff; text-transform: uppercase; border-radius: 0; padding: 10px 50px; font-size: 20px; margin-top: 40px;}
+
+#footer{background: url(../img/bg-datos.jpg) no-repeat center bottom; background-size: cover; margin-bottom: 100px;}
+#footer img{position: relative; bottom: -100px; left: 50%; margin-left: -200px; width: 40%;}
+
+
+
+
+@media (max-width: 767px){
+	
+	.pwag-date-box { width: 60px; height: 130px; }
+	.pwag-date-box__input{width: 60px; height: 110px; font-size: 70px;}
+	#pasos p {font-size: 16px;}
+	form{padding: 0 10px;}
+	#footer img { position: relative; bottom: -30px; left: 50%; margin-left: -100px; width: 200px;}
+	#footer{margin-bottom: 0;}
+}
