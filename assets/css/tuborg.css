@@ -41,7 +41,7 @@ body{background: #1b506b url(../img/bg.jpg) no-repeat center top;  background-si
     bottom: 10px;
     left: 10%;
 }
-.pwag-date-box__input{ width: 100px; border: none; height: 170px; position: absolute;  top: 0; left: 0; background: transparent; font-size: 90px;  text-align: center;  outline: none;  font-weight: bolder; }
+.pwag-date-box__input{ width: 100px; border: none; height: 170px; position: absolute;  top: 0; left: 0; background: transparent; font-size: 90px;  text-align: center;  outline: none;  font-weight: bolder;}
 #agegate input[type=number]::-webkit-inner-spin-button, 
 #agegate input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
@@ -76,23 +76,26 @@ body{background: #1b506b url(../img/bg.jpg) no-repeat center top;  background-si
 #pasos{}
 #pasos img{margin: 20px auto;}
 #pasos p{font-size: 20px; line-height: 100%; font-weight: bold; letter-spacing: 2px;}
+#pasos span{ position: absolute; left: -8%; top: 37%;}
 form{margin: 40px 0 50px;}
 .form-horizontal .form-group { margin-right: 0; margin-left: 0; }
 label{ display: block; letter-spacing: 2px; font-size: 18px;}
 .form-control{border-radius: 0; border: 5px solid #fff; background: transparent; font-size: 30px; color: #fff; height: 60px;}
+.form-control.invalid{border: 5px solid red;}
 .form-control#codigo{font-size: 60px; height: 100px; text-align: center;}
 .btn-default { color: #fff; background-color: transparent; border: 5px solid #fff; text-transform: uppercase; border-radius: 0; padding: 10px 50px; font-size: 20px; margin-top: 40px;}
 
 #footer{background: url(../img/bg-datos.jpg) no-repeat center bottom; background-size: cover; margin-bottom: 100px;}
 #footer img{position: relative; bottom: -100px; left: 50%; margin-left: -200px; width: 40%;}
+.form-horizontal .has-feedback .form-control-feedback{display: none !important;}
 
-
-
+#footer span{ position: absolute; bottom: 70px; right: 15px; }
+#footer span a{color: #fff; letter-spacing: 2px;}
 
 @media (max-width: 767px){
 	
 	.pwag-date-box { width: 60px; height: 130px; }
-	.pwag-date-box__input{width: 60px; height: 110px; font-size: 70px;}
+	.pwag-date-box__input{width: 60px; height: 110px; font-size: 70px;padding: 0; margin: 0;}
 	#pasos p {font-size: 16px;}
 	form{padding: 0 10px;}
 	#footer img { position: relative; bottom: -30px; left: 50%; margin-left: -100px; width: 200px;}

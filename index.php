@@ -10,9 +10,10 @@
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="assets/css/formValidation.css" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
 	<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="assets/css/tuborg.css">
+	<link rel="stylesheet" href="assets/css/tuborg.css?v=1.1">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,6 +21,16 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114415903-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-114415903-1');
+	</script>
+
   </head>
   <body>
 		<section id="agegate">
@@ -55,6 +66,11 @@
 							  	<input type="number" class="pwag-date-box__input number" id="DD4"  maxlength="1" size="1">					
 							</div>				
 						</div>
+		  				<div class="row">
+		  					<div class="form-group text-center">
+		  						<button type="submit" class="btn btn-default" id="btn-entrar">Entrar</button>
+		  					</div>
+		  				</div>
 		  			</div>	
 		  		</div>
 		  	</div>
@@ -115,6 +131,7 @@
 											</p>
 						  				</div>
 					  					<div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+						  					<span><p>Ó</p></span>
 						  					<img src="assets/img/paso03.png" class="img-responsive">
 						  					<p>
 							  					BUSCA BAJO LA LATA<br>
@@ -128,7 +145,7 @@
 				  			</div>
 				  			<div class="row">
 					  			<div class="col-sm-10 col-sm-offset-1">
-					  				<form class="form-horizontal" role="form">
+					  				<form class="form-horizontal" role="form" id="form_datos">
 						  				<div class="row">
 						  					<div class="col-sm-12">
 							  					<div class="form-group">
@@ -136,7 +153,7 @@
 								  						INGRESA AQUÍ  TB + FECHA + HORA  SIN PUNTOS NI ESPACIOS.<br>
 								  						( EJEMPLO TB0707170310) 
 													</label>
-							  						<input type="text" class="form-control" id="codigo" name="codigo"> 
+							  						<input type="text" class="form-control" id="codigo" name="codigo" required> 
 							  					</div>
 						  					</div>
 						  				</div>
@@ -145,13 +162,13 @@
 						  						<label for="nombre">
 							  						Nombre 
 												</label>
-						  						<input type="text" class="form-control" id="nombre" name="nombre"> 
+						  						<input type="text" class="form-control" id="nombre" name="nombre" required> 
 						  					</div>
 						  					<div class="form-group col-sm-5">
 						  						<label for="rut">
 							  						Rut 
 												</label>
-						  						<input type="text" class="form-control" id="rut" name="rut"> 
+						  						<input type="text" class="form-control" id="rut" name="rut" required> 
 						  					</div>
 						  				</div>
 						  				<div class="row">
@@ -159,17 +176,33 @@
 						  						<label for="fono">
 							  						Teléfono 
 												</label>
-						  						<input type="text" class="form-control" id="fono" name="fono"> 
+						  						<input type="text" class="form-control" id="fono" name="fono" required> 
 						  					</div>
 						  					<div class="form-group col-sm-7">
 						  						<label for="mail">
 							  						Correo 
 												</label>
-						  						<input type="email" class="form-control" id="mail" name="mail"> 
+						  						<input type="email" class="form-control" id="mail" name="mail" required> 
+						  					</div>
+						  				</div>
+						  				<div class="row">
+						  					<div class="col-sm-6 col-sm-offset-3">
+								  				<div class="alert alert-warning alert-dismissible fade in text-center hide" role="alert">
+									  				<button type="button" class="close" aria-label="Close">
+										  				<span aria-hidden="true">×</span>
+										  			</button> 
+										  			<strong>Excelente!</strong><br>Tu código ha sido ingresado. 
+										  		</div>
+								  				<div class="alert alert-danger alert-dismissible fade in text-center hide" role="alert">
+									  				<button type="button" class="close" aria-label="Close">
+										  				<span aria-hidden="true">×</span>
+										  			</button> 
+										  			<strong>Oh oh!</strong><br>Ha ocurrido un error, por favor vuelve a intentarlo. 
+										  		</div>
 						  					</div>
 						  				</div>
 					  					<div class="form-group text-center">
-					  						<button type="submit" class="btn btn-default">Enviar</button>
+					  						<button type="submit" class="btn btn-default" id="btn-enviar">Enviar</button>
 					  					</div>
 					  				</form>
 					  			</div>
@@ -185,6 +218,7 @@
 				<div class="row">
 					<div class="col-sm-10 col-sm-offset-1">
 						<div id="footer">
+							<span><a href="BASES_LEGALES_TUBORG_SURF_BEATSV14.02.pdf" target="_blank">Bases Legales</a></span>
 							<img src="assets/img/botella.png">
 						</div>
 					</div>
@@ -200,6 +234,8 @@
 	<script src="assets/js/owl.carousel.min.js"></script>
 	<script src="assets/js/jquery.autotab.min.js"></script>
 	<script src="assets/js/js.cookie.js"></script>
+    <script src="assets/js/jquery.mask.min.js"></script> 
+    <script src="assets/js/jquery.rut.min.js"></script>
 	<script src="assets/js/tuborg.js"></script>
   </body>
 </html>
