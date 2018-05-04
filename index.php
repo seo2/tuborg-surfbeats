@@ -1,3 +1,7 @@
+<?php 
+	require_once("ajax/_lib/config.php");
+	require_once("ajax/_lib/MysqliDb.php");	
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Tuborg - Surfbeats</title>
+    <title>Tuborg - Galería Weekend Santiago</title>
 
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -13,7 +17,7 @@
     <link href="assets/css/formValidation.css" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
 	<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="assets/css/tuborg.css?v=1.1">
+	<link rel="stylesheet" href="assets/css/tuborg.css?v=1.2">
 	<link rel="icon" type="image/png" href="favicon.png" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -75,114 +79,44 @@
 		  		</div>
 		  	</div>
 		</section>
-		<section id="slider">
+		<section class="contenido invisible" id="slider">
 	  		<div class="container">
 		  		<div class="row">
 		  			<div class="col-sm-10 col-sm-offset-1">
-		  				<div id="carousel" class="owl-carousel">
-			  				<div class="item">
-			  					<div class="row">
-			  						<div class="col-sm-10 col-sm-offset-1">
-			  							<img src="assets/img/slide1.png" class="img-responsive">
-			  						</div>
-			  					</div>
-			  				</div>
-			  				<div class="item">
-			  					<div class="row">
-			  						<div class="col-sm-10 col-sm-offset-1">
-			  							<img src="assets/img/slide2.png" class="img-responsive">
-			  						</div>
-			  					</div>
-			  				</div>
-			  				<div class="item">
-			  					<div class="row">
-			  						<div class="col-sm-10 col-sm-offset-1">
-			  							<img src="assets/img/slide3.png" class="img-responsive">
-			  						</div>
-			  					</div>
-			  				</div>
-		  				</div>
+		  				<img src="assets/img/banner.jpg" class="img-responsive">
 		  			</div>
 		  		</div>
 	  		</div>
 		</section>
-		<section id="formulario">
+		<section class="contenido invisible" id="formulario1">
 	  		<div class="container">
 		  		<div class="row">
 		  			<div class="col-sm-10 col-sm-offset-1">
-			  			<div id="formulariobox">
+			  			<div class="formulariobox">
 				  			<div class="row">
 					  			<div class="col-sm-10 col-sm-offset-1">
-					  				<div class="row text-center" id="pasos">
-					  					<div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
-						  					<img src="assets/img/paso01.png" class="img-responsive">
-						  					<p>
-							  					COMPRA<br>
-												UN SIX PACK<br>
-												DE TUBORG.
-											</p>
-						  				</div>
-					  					<div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
-						  					<img src="assets/img/paso02.png" class="img-responsive">
-						  					<p>
-							  					BUSCA AL REVERSO<br>
-												LA FECHA Y<br>
-												HORA DEL ENVASE.
-											</p>
-						  				</div>
-					  					<div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
-						  					<span><p>Ó</p></span>
-						  					<img src="assets/img/paso03.png" class="img-responsive">
-						  					<p>
-							  					BUSCA BAJO LA LATA<br>
-												LA FECHA Y<br>
-												HORA DEL ENVASE.
-											</p>
-						  				</div>				  					
-					  				</div>
-					  			</div>
-				  				
-				  			</div>
-				  			<div class="row">
-					  			<div class="col-sm-10 col-sm-offset-1">
+						  			
+						  			<h1>Jumping Bus</h1>
+						  			<p>Inscríbete aquí por uno de los cupos<br>para el Jumping Bus.</p>
+						  			
 					  				<form class="form-horizontal" role="form" id="form_datos">
+						  				
 						  				<div class="row">
-						  					<div class="col-sm-12">
-							  					<div class="form-group">
-							  						<label for="codigo" class="text-center" id="labelcod">
-								  						INGRESA AQUÍ  TB + FECHA + HORA  SIN PUNTOS NI ESPACIOS.<br>
-								  						( EJEMPLO TB0707170310) 
-													</label>
-							  						<input type="text" class="form-control" id="codigo" name="codigo" required> 
-							  					</div>
+						  					<div class="form-group col-sm-12">
+						  						<input type="text" class="form-control" id="nombre1" name="nombre" placeholder="NOMBRE" required> 
 						  					</div>
 						  				</div>
 						  				<div class="row">
-						  					<div class="form-group col-sm-7">
-						  						<label for="nombre">
-							  						Nombre 
-												</label>
-						  						<input type="text" class="form-control" id="nombre" name="nombre" required> 
+						  					<div class="form-group col-sm-6">
+						  						<input type="text" class="form-control rut" id="rut1" name="rut" placeholder="RUT" required> 
 						  					</div>
-						  					<div class="form-group col-sm-5">
-						  						<label for="rut">
-							  						Rut 
-												</label>
-						  						<input type="text" class="form-control" id="rut" name="rut" required> 
+						  					<div class="form-group col-sm-6">
+						  						<input type="text" class="form-control" id="fono1" name="fono" placeholder="TELÉFONO" required> 
 						  					</div>
 						  				</div>
 						  				<div class="row">
-						  					<div class="form-group col-sm-5">
-						  						<label for="fono">
-							  						Teléfono 
-												</label>
-						  						<input type="text" class="form-control" id="fono" name="fono" required> 
-						  					</div>
-						  					<div class="form-group col-sm-7">
-						  						<label for="mail">
-							  						Correo 
-												</label>
-						  						<input type="email" class="form-control" id="mail" name="mail" required> 
+						  					<div class="form-group col-sm-12">
+						  						<input type="email" class="form-control" id="mail1" name="mail" placeholder="CORREO" required> 
 						  					</div>
 						  				</div>
 						  				<div class="row">
@@ -191,7 +125,7 @@
 									  				<button type="button" class="close" aria-label="Close">
 										  				<span aria-hidden="true">×</span>
 										  			</button> 
-										  			<strong>Excelente!</strong><br>Tu código ha sido ingresado. 
+										  			<strong>Excelente!</strong><br>Hemos registrado tu inscripción. 
 										  		</div>
 								  				<div class="alert alert-danger alert-dismissible fade in text-center hide" role="alert">
 									  				<button type="button" class="close" aria-label="Close">
@@ -212,14 +146,99 @@
 		  		</div>
 	  		</div>
 		</section>
-		
-		<footer>
+		<section class="contenido invisible" id="formulario2">
+	  		<div class="container">
+		  		<div class="row">
+		  			<div class="col-sm-10 col-sm-offset-1">
+			  			<div class="formulariobox">
+				  			<div class="row">
+					  			<div class="col-sm-10 col-sm-offset-1">
+						  			<div class="row">
+						  				<div class="col-xs-3">
+						  					<img src="assets/img/logo_daw.png" class="img-responsive">
+						  				</div>
+						  				<div class="col-xs-9">
+						  					<p>inscríbete aquí por uno<br>de los cupos a Drink and Write<br><small>para el viernes 11 de Mayo a las 20:00 horas.</small></p>
+						  				</div>
+						  			</div>
+					  			</div>
+				  			</div>
+				  			<div class="row">
+					  			<div class="col-sm-10 col-sm-offset-1">
+						  			
+					  				<form class="form-horizontal" role="form" id="form_datos2">
+						  				
+						  				<div class="row">
+						  					<div class="form-group col-sm-12">
+						  						<input type="text" class="form-control" id="nombre2" name="nombre" placeholder="NOMBRE" required> 
+						  					</div>
+						  				</div>
+						  				<div class="row">
+						  					<div class="form-group col-sm-6">
+						  						<input type="text" class="form-control rut" id="rut2" name="rut" placeholder="RUT" required> 
+						  					</div>
+						  					<div class="form-group col-sm-6">
+						  						<input type="text" class="form-control" id="fono2" name="fono" placeholder="TELÉFONO" required> 
+						  					</div>
+						  				</div>
+						  				<div class="row">
+						  					<div class="form-group col-sm-12">
+						  						<input type="email" class="form-control" id="mail2" name="mail" placeholder="CORREO" required> 
+						  					</div>
+						  				</div>
+						  				<div class="row">
+						  					<div class="col-sm-6 col-sm-offset-3">
+								  				<div class="alert alert-warning alert-dismissible fade in text-center hide" role="alert">
+									  				<button type="button" class="close" aria-label="Close">
+										  				<span aria-hidden="true">×</span>
+										  			</button> 
+										  			<strong>Excelente!</strong><br>Hemos registrado tu inscripción. 
+										  		</div>
+								  				<div class="alert alert-danger alert-dismissible fade in text-center hide" role="alert">
+									  				<button type="button" class="close" aria-label="Close">
+										  				<span aria-hidden="true">×</span>
+										  			</button> 
+										  			<strong>Oh oh!</strong><br>Ha ocurrido un error, por favor vuelve a intentarlo. 
+										  		</div>
+						  					</div>
+						  				</div>
+						  				<div class="row">
+						  					<div class="col-sm-4 col-sm-offset-4">
+							  					<div class="form-group text-center">
+							  						<button type="submit" class="btn btn-default" id="btn-enviar2">Enviar</button>
+							  					</div>
+						  					</div>
+						  					<div class="col-sm-3 col-sm-offset-1">
+							  					<img src="assets/img/logo-madhaus.png" class="img-responsive" id="madhaus">
+						  					</div>
+						  				</div>
+					  				</form>
+					  			</div>
+				  			</div>
+			  			</div>
+		  			</div>
+		  		</div>
+	  		</div>
+		</section>
+		<footer  class="contenido invisible">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-10 col-sm-offset-1">
-						<div id="footer">
-							<span><a href="BASES_LEGALES_TUBORG_SURF_BEATSV14.02.pdf" target="_blank">Bases Legales</a></span>
-							<img src="assets/img/botella.png">
+					<div class="col-sm-8 col-sm-offset-2">
+						<div class="row">
+							<div class="col-sm-4 col-sm-offset-2">
+								<div class="row">
+									<div class="col-sm-10 col-sm-offset-1">
+										<img src="assets/img/logo-tuborg.png" class="img-responsive">
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="row">
+									<div class="col-sm-10 col-sm-offset-1">
+										<img src="assets/img/logo_galeria.png" class="img-responsive">
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

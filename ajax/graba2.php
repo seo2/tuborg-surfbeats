@@ -10,21 +10,17 @@ if ($ajax) {
 	$rut		= filter_var($_POST["rut"], 	FILTER_SANITIZE_STRING);
 	$mail 		= filter_var($_POST["mail"], 	FILTER_SANITIZE_EMAIL);
 	$fono		= filter_var($_POST["fono"], 	FILTER_SANITIZE_STRING);
-/* 	$jumpDia    = filter_var($_POST["dia"], 	FILTER_SANITIZE_STRING); */
-/* 	$jumpTour   = filter_var($_POST["tour"], 	FILTER_SANITIZE_STRING); */
 
 
-/*
 	$total = 0;
-	$participante = $db->rawQuery("select count(*) as total from jumping where jumpTour = $jumpTour");
+	$participante = $db->rawQuery('select count(*) as total from drinking');
 	if($participante){
 		foreach ($participante as $p) {
 			$total = $p['total'];
 		}
 	}  
 
-	if($total < 30){
-*/
+	if($total <= 100){
 			
 		$ua		= $_SERVER['HTTP_USER_AGENT'];
 		$ip		= $_SERVER['REMOTE_ADDR'];	
@@ -33,15 +29,14 @@ if ($ajax) {
 		$ahora 	= date("Y-m-d H:i:s");
 		
 		$data = Array (
-			"jumpNom" 	=> $nombre,
-			"jumpRut" 	=> $rut,
-			"jumpMail" 	=> $mail,
-			"jumpFono" 	=> $fono,
-/* 			"jumpTour" 	=> $jumpTour, */
-			"jumpTS" 	=> $ahora
+			"drinkNom" 	=> $nombre,
+			"drinkRut" 	=> $rut,
+			"drinkMail" => $mail,
+			"drinkFono" => $fono,
+			"drinkTS" 	=> $ahora
 		);
 		
-		$id = $db->insert ('jumping', $data);
+		$id = $db->insert ('drinking', $data);
 		
 		
 		if($id){
@@ -56,29 +51,27 @@ if ($ajax) {
 			$message  .= '<table style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;border-spacing:0 !important;border-collapse:collapse !important;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;background-color:#f3f3f3; display:inline-table; text-align: left;" border="0" cellpadding="0" cellspacing="0" width="700" height="1080">';
 			$message  .= '<tr style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;">';
 			$message  .= '<td colspan="5" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;padding:0;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">';
-			$message  .= '<img src="http://promotuborg.cl/v2/assets/img/mail2.jpg" width="700" height="1080" alt="Ya eres parte del Jumping Bus" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;border:0;-ms-interpolation-mode:bicubic;display:block;">';
+			$message  .= '<img src="http://promotuborg.cl/v2/assets/img/mail1.jpg" width="700" height="1080" alt="Ya eres parte del taller Drink and Write" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;border:0;-ms-interpolation-mode:bicubic;display:block;">';
 			$message  .= "</td></tr></table></body></html>";
 			$message  .= "</div>";
 			$message  .= "</body>";
 			$message  .= "</html>";			
 	
-			$subject = 'Ya eres parte del Jumping Bus';
+			$subject = 'Ya eres parte del taller Drink and Write';
 			
 			$headers  = "From: Galería Weekend Santiago <no-contestar@promotuborg.cl>\r\n";
 			$headers .= "MIME-Version: 1.0\r\n";
 			$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 			
-			mail($mail, $subject, $message, $headers);	
+			mail($mail, $subject, $message, $headers);			
 			
 			echo $id;
 		}else{
 			echo 'error';
 		}
-/*
 	}else{
 		echo 'existe';
 	}
-*/
 }else{
 	echo 'error';
 }

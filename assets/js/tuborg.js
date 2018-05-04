@@ -1,6 +1,7 @@
 console.log(Cookies.get('oldenough'));
 if(Cookies.get('oldenough')=='1'){
-	$('#agegate').hide();
+	$('#agegate').fadeOut();
+	$('.contenido').removeClass('invisible');
 }
 
 
@@ -33,6 +34,7 @@ $('input#DD4').focusout(function(e) {
   	if(edad>17 && edad<100){
 	  	Cookies.set('oldenough', '1', { expires: 7, path: '' });
 	  	$('#agegate').fadeOut();
+	$('.contenido').removeClass('invisible');
   	}else if(edad>=100){
 	  	alert('Debes ingresar un año válido');
 		$('#DD1').val('');
@@ -89,71 +91,12 @@ $(".owl-carousel").owlCarousel({
 	 navText : ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>']
 });
 
-/*
-$('#form_datos')
-    .formValidation({
-        framework: 'bootstrap',
-        excluded: ':disabled',
-        icon: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            rut: {
-                validators: {
-                    id: {
-                        country: 'CL',
-                        message: 'Rut Invalido'
-                    }
-                }
-            }
-        }
-    })
-    .on('err.field.fv', function(e, data) {
-            data.element
-                .data('fv.messages')
-                .find('.help-block[data-fv-for="' + data.field + '"]').hide();
-    })
-    .on('success.form.fv', function(e) {
-		e.preventDefault();
-		$("#btn-enviar").html('<i class="fa fa fa-spinner fa-spin"></i>');
-		$('.alert').addClass('hide');
-		$.ajax({
-		    type: "POST",
-		    url: "ajax/graba.php",
-		    data: $("#form_datos").serialize(),
-		    success: function(msg) {
-		    	console.log(msg);
-		    	if(msg=='error'){
-					$('.alert-danger').removeClass('hide');
-					$('#btn-enviar').prop('disabled', false);
-					$('#btn-enviar').removeClass('disabled');
-		    	}else{
-					$('.alert-warning').removeClass('hide');
-					$('#btn-enviar').prop('disabled', false);
-					$('#btn-enviar').removeClass('disabled');
-					$('#form_datos').data('formValidation').resetForm();
-					$('#form_datos')[0].reset();
-		    	}
-				$("#btn-enviar").html('enviar');
-		    },
-		    error: function(xhr, status, error) {
-				//alert(status);
-			}
-		});
-
-		 
-    })
-    .find('[name="rut"]').mask('99999999-A');
-  
-*/  
 
 	$('#form_datos').on("submit", function(e) {
 	  	e.preventDefault();
 	  
 		$("#btn-enviar").html('<i class="fa fa fa-spinner fa-spin"></i>');
-		$('.alert').addClass('hide');
+		$('#form_datos .alert').addClass('hide');
 		
 		$('#progreso').removeClass('hide');
 		
@@ -174,11 +117,6 @@ $('#form_datos')
 			error = 1;
 		}	
 	
-		if(codigo==''){
-			$('#codigo').addClass('invalid');
-			error = 1;
-		}
-	
 		if(telefono==''){
 			$('#fono').addClass('invalid');
 			error = 1;
@@ -193,6 +131,21 @@ $('#form_datos')
 			$('#rut').addClass('invalid');
 			error = 1;
 		}
+		
+/*
+		if(dia==''){
+			$('#dia1').addClass('invalid');
+			error = 1;
+		}
+*/
+/*
+	
+	
+		if(tour==''){
+			$('#tour1').addClass('invalid');
+			error = 1;
+		}	
+*/
 	  
 	  
 	  	if(error==0){  
@@ -204,26 +157,26 @@ $('#form_datos')
 				    console.log(data);  
 					error = 0;
 			    	if(data=='error'){
-						$('.alert-danger').removeClass('hide');
+						$('#form_datos .alert-danger').removeClass('hide');
 						$("#btn-enviar").html('enviar');
 			    	}else{
-						$('.alert-warning').removeClass('hide');
+						$('#form_datos .alert-warning').removeClass('hide');
 						$('#form_datos')[0].reset();
 						$("#btn-enviar").html('enviar');
+						gtag('config', 'UA-114415903-1', {'page_path': '/envio-formulario'});
 			    	} 
 				    
 		    	}
 		    });	  	
 	  	}else{ 	
-		  	$('.alert-danger').removeClass('hide');
-			//Materialize.toast('Debes completar el formulario', 4000);
+		  	$('#form_datos .alert-danger').removeClass('hide');
 			$("#btn-enviar").html('enviar');
 			error = 0;
 		  	return;
 		}
 	});
 
-	$("#rut")
+	$(".rut")
 	  .rut({formatOn: 'keyup', validateOn: 'keyup'})
 	  .on('rutInvalido', function(){ 
 	    $(this).removeClass("valid");
@@ -243,3 +196,74 @@ $('#form_datos')
     $('.alert-danger .close').on('click',function(){
 	    $('.alert-danger').addClass('hide');
     });
+
+
+
+
+	$('#form_datos2').on("submit", function(e) {
+	  	e.preventDefault();
+	  
+		$("#btn-enviar2").html('<i class="fa fa fa-spinner fa-spin"></i>');
+		$('#form_datos2 .alert').addClass('hide');
+		
+		$('#progreso2').removeClass('hide');
+		
+	  	nombre 		= $('#nombre2').val();
+	  	rut 		= $('#rut2').val();
+	  	telefono 	= $('#fono2').val();
+	  	email 		= $('#mail2').val();
+	
+		if(nombre==''){
+			$('#nombre').addClass('invalid');
+			error = 1;
+		}
+	
+	
+		if(rut==''){
+			$('#rut').addClass('invalid');
+			error = 1;
+		}	
+	
+		if(telefono==''){
+			$('#fono').addClass('invalid');
+			error = 1;
+		}
+	
+		if(email==''){
+			$('#mail').addClass('invalid');
+			error = 1;
+		}
+	  
+		if($('#rut').hasClass('invalid')){
+			$('#rut').addClass('invalid');
+			error = 1;
+		}
+	  
+	  
+	  	if(error==0){  
+		    $.ajax({
+			    url: "ajax/graba2.php",
+				type: "POST",
+	            data: $('#form_datos2').serialize(),
+	            success: function(data) {		   
+				    console.log(data);  
+					error = 0;
+			    	if(data=='error'){
+						$('#form_datos2 .alert-danger').removeClass('hide');
+						$("#btn-enviar2").html('enviar');
+			    	}else{
+						$('#form_datos2 .alert-warning').removeClass('hide');
+						$('#form_datos2')[0].reset();
+						$("#btn-enviar2").html('enviar');
+						gtag('config', 'UA-114415903-1', {'page_path': '/envio-formulario'});
+			    	} 
+				    
+		    	}
+		    });	  	
+	  	}else{ 	
+		  	$('#form_datos2 .alert-danger').removeClass('hide');
+			$("#btn-enviar2").html('enviar');
+			error = 0;
+		  	return;
+		}
+	});

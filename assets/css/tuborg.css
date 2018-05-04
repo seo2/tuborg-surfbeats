@@ -1,3 +1,4 @@
+@import url("https://use.typekit.net/wrh5rmi.css");
 @font-face {
     font-family: 'rockwellregular';
     src: url('../fonts/rockwen-webfont.woff2') format('woff2'),
@@ -6,11 +7,11 @@
     font-style: normal;
 
 }
-html, body{height: 100%; width: 100%; }
-body{background: #1b506b url(../img/bg.jpg) no-repeat center top;  background-size: cover; color: #fff;font-family: 'rockwellregular'; text-transform: uppercase;}
+
+body{background: #0f8e53 url(../img/bg_v2.jpg) no-repeat center top;  background-size: cover; color: #fff;font-family: 'rockwellregular'; text-transform: uppercase; border: 20px solid #0f8e53; padding-top: 40px;}
 
 
-#agegate{height: 100%; width: 100%; background: #1b506b; position: fixed; z-index: 100; }
+#agegate{height: 100%; width: 100%; border: 20px solid #0f8e53;position: fixed; z-index: 100;     left: 0; top: 0; background: url(../img/bg_v2.jpg); background-size: cover;}
 #agegate img{margin: 45% auto 20%;}
 #agegate p{ letter-spacing: 2px; font-weight: bold;}
 .pwag-birthday-group{display: inline-block;}
@@ -36,7 +37,7 @@ body{background: #1b506b url(../img/bg.jpg) no-repeat center top;  background-si
     font-size: 0;
     height: 20px;
     width: 80%;
-    background: #41a1a0;
+    background: #838383;
     position: absolute;
     bottom: 10px;
     left: 10%;
@@ -72,18 +73,23 @@ body{background: #1b506b url(../img/bg.jpg) no-repeat center top;  background-si
 .owl-prev:hover i, .owl-next:hover i{opacity: 1}
 
 
-#formulariobox{background: url(../img/bg-datos.jpg) no-repeat center bottom; background-size: cover; margin: 50px 0;}
+.formulariobox{background:rgba(255,255,255,0.15); margin: 30px 0 10px;font-family: "museo-sans"; font-style: italic;}
+.formulariobox h1{font-weight: 700; font-size: 40px;}
+.formulariobox p{font-size: 24px;}
 #pasos{}
 #pasos img{margin: 20px auto;}
 #pasos p{font-size: 20px; line-height: 100%; font-weight: bold; letter-spacing: 2px;}
 #pasos span{ position: absolute; left: -8%; top: 37%;}
-form{margin: 40px 0 50px;}
-.form-horizontal .form-group { margin-right: 0; margin-left: 0; }
+form{margin: 20px 0 50px;}
+.form-horizontal .form-group { margin-right: 0; margin-left: 0; margin-bottom: 10px; }
 label{ display: block; letter-spacing: 2px; font-size: 18px;}
-.form-control{border-radius: 0; border: 5px solid #fff; background: transparent; font-size: 30px; color: #fff; height: 60px;}
+.form-control{border-radius: 0; border: none; background: #fff; font-size: 30px; color: #333333; height: 60px; font-weight: 700;}
 .form-control.invalid{border: 5px solid red;}
 .form-control#codigo{font-size: 60px; height: 100px; text-align: center;}
-.btn-default { color: #fff; background-color: transparent; border: 5px solid #fff; text-transform: uppercase; border-radius: 0; padding: 10px 50px; font-size: 20px; margin-top: 40px;}
+.btn-default {transition: all 0.2s ease-in-out; color: #333333; background: #fff; border: 5px solid #fff; text-transform: uppercase; border-radius: 0; padding: 10px 50px; font-size: 24px; margin-top: 20px; font-weight: 700; letter-spacing: 3px;}
+#madhaus{margin-top: 25px;}
+#formulario2 .formulariobox{padding-top: 40px;}
+#formulario2 .formulariobox p{margin-top: 40px;}
 
 #footer{background: url(../img/bg-datos.jpg) no-repeat center bottom; background-size: cover; margin-bottom: 100px;}
 #footer img{position: relative; bottom: -100px; left: 50%; margin-left: -200px; width: 40%;}
@@ -91,6 +97,10 @@ label{ display: block; letter-spacing: 2px; font-size: 18px;}
 
 #footer span{ position: absolute; bottom: 70px; right: 15px; }
 #footer span a{color: #fff; letter-spacing: 2px;}
+
+footer{margin: 40px auto 80px;}
+
+
 
 @media (max-width: 767px){
 	
